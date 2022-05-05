@@ -4,6 +4,7 @@ html {
     font-size: 62.5%;
     box-sizing: border-box;
     background: linear-gradient(#333, #999);
+    height: 100vh;
     border: 8px solid red;
 }
 *, *::before, *::after {
@@ -20,4 +21,13 @@ header {
 /* overwrite default style on select (form/buttons also) */
 select {
     font-size: 1.75rem;
+}
+.section-container {
+    display: flex;
+    padding: 0 10vw 0 10vw;
+    border: 4px solid green;
+}
+.column {
+    font-size: 2rem;
+    border: 2px solid fuchsia;
 }
