@@ -5,7 +5,8 @@ const BREEDS_URL = 'https://dog.ceo/api/breeds/list/all';
 // Fetch RequestInfo
     // Then return response as JavaScript Object
     // Then store JavaScript object into variable (data)
-        // 
+        // Iterate through object properties
+            // Render each property as an option element
 
 fetch(BREEDS_URL)
     .then(response => {                                 // Returns response
