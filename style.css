@@ -41,3 +41,7 @@ select {
 ul {
     padding-left: 4%;
 }
+.dog-image {
+    max-width: 90rem;
+    max-height: 70rem;
+}
