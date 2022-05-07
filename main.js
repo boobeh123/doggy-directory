@@ -12,16 +12,19 @@ const BREEDS_URL = 'https://dog.ceo/api/breeds/list/all';
     // Pull value from event.target object and store in variable (url)
         // Select option values create dynamic url using a template literal 
             // Drop menu options generate dynamic url to pass into a function
+// Function Fetches RequestInfo from dynamic url
+    // Then returns response as JavaScript Object
+    // Then renders response as an image
 
 fetch(BREEDS_URL)
     .then(response => {                                             // Returns response
         return response.json();                                     // Returns promise with object. Object has message and status properties
     })
     .then(data =>{
-        console.log(data)                                           // Returns object. Object has message and status property
-        console.log(data.message)                                   // Returns object of arrays
-        console.log(Object.keys(data))                              // Returns object properties in an array -> output -> message, status
-        console.log(Object.keys(data.message))                      // Returns object properties in an array -> output -> 95 element array
+        // console.log(data)                                        // Returns object. Object has message and status property
+        // console.log(data.message)                                // Returns object of arrays
+        // console.log(Object.keys(data))                           // Returns object properties in an array -> output -> message, status
+        // console.log(Object.keys(data.message))                   // Returns object properties in an array -> output -> 95 element array
         
         const dataObject= data.message                              // Store object in variable (dataObject)
         const dataObjectProperties = Object.keys(dataObject);       // Store array of object properties in variable (dataObjectProperties)
@@ -35,9 +38,9 @@ fetch(BREEDS_URL)
     })
 
 document.querySelector('select').addEventListener('change', event => {
-    console.log(event);                                                         // Returns Event object
-    console.log(event.target);                                                  // Returns 'select' tag with values
-    console.log(event.target.value);                                            // Returns event.target value
+    // console.log(event);                                                      // Returns Event object
+    // console.log(event.target);                                               // Returns 'select' tag with values
+    // console.log(event.target.value);                                         // Returns event.target value
     
     let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`   // Event.target.value generates dynamic url from options  literal
     console.log(url)                                                            // Returns png jpg
