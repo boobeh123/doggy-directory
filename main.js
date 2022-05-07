@@ -45,6 +45,7 @@ document.querySelector('select').addEventListener('change', event => {
     let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`   // Event.target.value generates dynamic url from options  literal
     console.log(url)                                                            // Returns png jpg
     getDogImg(url)                                                              // Dynamic url passed into function
+    dogInfo.assignMF()                                                          // Call 2 methods, gender and name
 })
 
 function getDogImg(url) {
@@ -68,21 +69,35 @@ const dogInfo = {
         "Knows exactly how the universe will end, but doesn't care.",'Would be a top-notch violinist, if they had thumbs.','Dreams of breaking into the dog food plant down the road and eating EVERYTHING.','Can see one more color than any other dog. You will never know which one it is.','Won the award for "fastest lick of the kitchen counter" in 2018 (self-awarded).','Ears and tail are the same length (big ears)!','Takes charge and loudly demands treats','Very bouncy, scientists suspects that legs may contain springs.',"Prefers to eat at the same time as the humans - it's only polite!",'Originally from Tijuana, unkown level of fluency in Spanish.','Favorite hobby is sculpting (the fence, with their mouth)','Can eat an entire loaf of bread in one sitting',"Thinks they are the cat's best friend, but the cat considers them an acquaintence, at best.",'Chooses whether to listen to you on a cas-by-case basis','Can escape any harness ever made','Has an extra toe','Caught a butterfly and immediately spit it back out','Fences are less of an obstacle and more of a suggestion','Terrified of the kitten','Once ate an entire pack of gum','Can consume a rawhide chew in 30 seconds','Farts every time they sit down','Can howl on pitch','Will immediately present belly for rubs','Dream job: bacon taste-tester','Career: retired actor/consultant'],
         // Empty properties will be assigned through methods
         MF: '',
-        rname: '',
+        randomName: '',
         age: '',
         likes: '',
         dislikes: '',
         fact: '',
 
-        // Method assigns a gender for dog characteristics
-        assignMF(){
+        // Method assigns a gender for dog characteristics then calls a second method
+        assignMF() {
             // Math.random generates a number between zero and one
             // "coin flip" will assign gender randomly
             let result = Math.random();
             if (result < 0.5) {
+                // If a male gender is assigned, call assignName method and pass maleNames array as an argument
+                console.log('boy')
                 this.MF ='Male'
+                this.assignName(this.maleNames);
             } else {
+                // If a female gender is assigned, call assignName method and pass maleNames array as an argument
+                console.log('girl')
                 this.MF = 'Female'
+                this.assignName(this.femaleNames);
             }
+        },
+
+        // This method is called after a gender has been assigned first
+        assignName(array) {
+            // Generate a random index. The index will access a random name from the array passed in
+            this.randomName = array[Math.floor(Math.random() * array.length)]
+            // Display random name on #dog-name
+            document.querySelector('#dog-name').innerHTML = `${this.randomName}`;
         }
 }
