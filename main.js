@@ -11,6 +11,7 @@ const BREEDS_URL = 'https://dog.ceo/api/breeds/list/all';
 // Drop menu listens for a click or change in select
     // Pull value from event.target object and store in variable (url)
         // Select option values create dynamic url using a template literal 
+            // Drop menu options generate dynamic url to pass into a function
 
 fetch(BREEDS_URL)
     .then(response => {                                             // Returns response
@@ -34,9 +35,21 @@ fetch(BREEDS_URL)
     })
 
 document.querySelector('select').addEventListener('change', event => {
-    console.log(event);                                 // Returns Event object
-    console.log(event.target);                          // Returns 'select' tag with values
-    console.log(event.target.value);                    // Returns event.target value
+    console.log(event);                                                         // Returns Event object
+    console.log(event.target);                                                  // Returns 'select' tag with values
+    console.log(event.target.value);                                            // Returns event.target value
     
-    let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`
+    let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`   // Event.target.value generates dynamic url from options  literal
+    console.log(url)                                                            // Returns png jpg
+    getDogImg(url)                                                              // Dynamic url passed into function
 })
+
+function getDogImg(url) {
+    fetch(url)                                                                  // Fetch RequestInfo from dynamic url
+        .then(response => {
+            return response.json();                                             // Then return response as JavaScript Object
+        })
+        .then(data => {
+            document.querySelector('.dog-image').src = data.message;            // Then render image onto DOM from javascript object
+        })
+}
