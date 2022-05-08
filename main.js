@@ -46,6 +46,7 @@ document.querySelector('select').addEventListener('change', event => {
     console.log(url)                                                            // Returns png jpg
     getDogImg(url)                                                              // Dynamic url passed into function
     dogInfo.assignMF()                                                          // Call 2 methods, gender and name
+    dogInfo.assignAge()
 })
 
 function getDogImg(url) {
@@ -91,13 +92,22 @@ const dogInfo = {
                 this.MF = 'Female'
                 this.assignName(this.femaleNames);
             }
+            // Display gender on #dog-Gender
+            document.querySelector('#dog-gender').innerText = `Gender: ${this.MF}`
         },
 
-        // This method is called after a gender has been assigned first
+        // Method is called after a gender has been assigned first
+        // This method uses Math.random to assign a random name
         assignName(array) {
             // Generate a random index. The index will access a random name from the array passed in
             this.randomName = array[Math.floor(Math.random() * array.length)]
             // Display random name on #dog-name
             document.querySelector('#dog-name').innerHTML = `${this.randomName}`;
-        }
+        },
+
+        // This method uses Math.random to assign a random age
+        assignAge() {
+            this.age = Math.round(Math.random() * 18);
+            document.querySelector('#dog-age').innerHTML = `Age: ${this.age}`
+        },
 }
