@@ -110,4 +110,20 @@ const dogInfo = {
             this.age = Math.round(Math.random() * 18);
             document.querySelector('#dog-age').innerHTML = `Age: ${this.age}`
         },
+
+        // This method uses the Fisher-yates-shuffle to randomize the array 
+        fisherYatesShuffle(array) {
+            let m = array.length, t, i;
+
+            // While there remain elements to shuffle
+            while (m) {
+                // Pick a remaining element
+                i = Math.floor(Math.random() * m--);
+                // Swap it with the current element
+                t = array[m];
+                array[m] = array[i];
+                array[i] = t;
+            }
+            return array;
+        },
 }
