@@ -45,3 +45,8 @@ ul {
     max-width: 90rem;
     max-height: 70rem;
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+}
