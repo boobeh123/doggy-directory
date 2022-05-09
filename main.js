@@ -44,9 +44,12 @@ document.querySelector('select').addEventListener('change', event => {
     
     let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`   // Event.target.value generates dynamic url from options  literal
     console.log(url)                                                            // Returns png jpg
-    getDogImg(url)                                                              // Dynamic url passed into function
-    dogInfo.assignMF()                                                          // Call 2 methods, gender and name
-    dogInfo.assignAge()
+    getDogImg(url)                                                              // Calls function that displays dynamic url img source
+    dogInfo.assignMF()                                                          // Call 2 methods, that displays gender and name
+    dogInfo.assignAge()                                                         // Calls method, that displays randomized age from 1 to 18
+    dogInfo.assignLikes()                                                       // Calls method, fisherYatesShuffle function randomizes the array and displays index 0 & 1 as hobbies
+    dogInfo.assignDislikes()                                                    // Calls method, fisherYatesShuffle function randomizes the array and displays index 0 & 1 as dislikes
+    dogInfo.assignFunFacts()                                                    // Calls method, fisherYatesShuffle function randomizes the array and displays index 0 & 1 as fun facts
 })
 
 function getDogImg(url) {
@@ -83,12 +86,12 @@ const dogInfo = {
             let result = Math.random();
             if (result < 0.5) {
                 // If a male gender is assigned, call assignName method and pass maleNames array as an argument
-                console.log('boy')
+                // console.log('boy')
                 this.MF ='Male'
                 this.assignName(this.maleNames);
             } else {
                 // If a female gender is assigned, call assignName method and pass maleNames array as an argument
-                console.log('girl')
+                // console.log('girl')
                 this.MF = 'Female'
                 this.assignName(this.femaleNames);
             }
@@ -112,18 +115,46 @@ const dogInfo = {
         },
 
         // This method uses the Fisher-yates-shuffle to randomize the array 
+        // Pull a random element from the array, set it aside, incrementally building a new randomized array 
+        // The back of the array stores shuffled elements & The front of the array stores the remaining elements
         fisherYatesShuffle(array) {
-            let m = array.length, t, i;
+            let remainingElements = array.length;
+            let copy = undefined;
+            let iteration = undefined;
 
             // While there remain elements to shuffle
-            while (m) {
+            while (remainingElements) {
                 // Pick a remaining element
-                i = Math.floor(Math.random() * m--);
+                iteration = Math.floor(Math.random() * remainingElements--);
                 // Swap it with the current element
-                t = array[m];
-                array[m] = array[i];
-                array[i] = t;
+                copy = array[remainingElements];
+                array[remainingElements] = array[iteration];
+                array[iteration] = copy;
             }
             return array;
         },
+
+        // This method uses fisher-yates-shuffle to randomize the likesList array
+        assignLikes() {
+            // Slice returns index 0 and index 1 of the randomized array
+            this.likes = this.fisherYatesShuffle(this.likesList).slice(0,2);
+            // Then displays the two array elements as hobbies
+            document.querySelector('#dog-hobby').innerText = `Hobbies: ${this.likes[0]}, ${this.likes[1]}`
+        }, 
+
+        // This method uses fisher-yates-shuffle to randomize the dislikesList array
+        assignDislikes() {
+            // Slice returns index 0 and index 1 of the randomized array
+            this.dislikes = this.fisherYatesShuffle(this.dislikesList).slice(0,2);
+            // Then displays the two array elements as dislikes
+            document.querySelector('#dog-dislike').innerText = `Doesn't like: ${this.dislikes[0]}, ${this.dislikes[1]}`
+        }, 
+
+        // This method uses fisher-yates-shuffle to randomize the fact array
+        assignFunFacts() {
+            // Slice returns index 0 and index 1 of the randomized array
+            this.fact = this.fisherYatesShuffle(this.factList).slice(0,2);
+            // Then displays the two array elements as fun facts
+            document.querySelector('#dog-funfacts').innerText = `Facts: ${this.fact[0]}, ${this.fact[1]}`
+        }
 }
