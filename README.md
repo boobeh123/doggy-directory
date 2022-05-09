@@ -4,7 +4,7 @@
 An application that fetches a list of dog breeds, displays a random picture of that breed, and creates a unique name, likes, and dislikes.
 
 ## Demo
-![TBD]
+![TBD](demo2.gif)
 
 ## Features
 * Returns 95 different breeds of dog
