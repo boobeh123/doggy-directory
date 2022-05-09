@@ -1,4 +1,4 @@
-[# Random-dog-generator](https://github.com/boobeh123/Random-dog-generator)
+[Random-dog-generator](https://github.com/boobeh123/Random-dog-generator)
 
 ## Description
 An application that fetches a list of dog breeds, displays a random picture of that breed, and creates a unique name, likes, and dislikes.
