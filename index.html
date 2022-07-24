@@ -17,47 +17,32 @@
 <body>
     <header>
         <h1>Dog facts</h1>
-        <h2 id="dog-name">Sweet boi</h2>
+        <h2 class="dog-name"></h2>
     </header>
-    
-    <!-- Column Container Start -->
-    <section class="section-container">
-
-        <!-- Left column -->
-        <section class="column" id="left-column">
-
-            <!-- Text describing dropdown menu -->
+    <div class="section-container">
+        <div class="left column">
             <section class="item">
                 <h2>Pick dog breed</h2>
             </section>
-
-            <!-- Dropdown menu -->
             <section class="item">
-                <!-- Drop menu options -->
                 <select>
                     <option value="" selected>Show more</option>
                 </select>
-            </section>
-
-            <!-- Image displays once option is selected from drop menu -->
-            <section class="item">
+            </section><!-- 
+            Image displays here 
+        --><section class="item">
                 <section class="img-container">
                     <section class="container">
                         <img src="http://placecorgi.com/350/350" class="dog-image" alt="dog-corgi-randomly-generated-from-placecorgi"/>
                     </section>
                 </section>
             </section>
-
-        </section>
-        <!-- Left column -->
-
-        <!-- Right column -->
-        <section class="column">
-
-            <!-- Traits listed after option is selected from drop menu -->
+        </div>
+    </div>
+    <div class="section-container">
+        <section class="right column">
             <section class="item">
                 <h2>Dog traits</h2>
-                <!-- List of traits -->
                 <ul>
                     <li id="dog-gender">Gender: </li>
                     <li id="dog-age">Age: </li>
@@ -66,20 +51,14 @@
                     <li id="dog-funfacts">Facts: </li>
                 </ul>
             </section>
-
         </section>
-        <!-- Right column -->
-
-    </section>
-    <!-- Column Container End -->
-
+    </div>
     <footer>
         <section>
         <a href="https://github.com/boobeh123"><i class="fab fa-github"></i></a>
         <a href="https://twitter.com/boobeh123"><i class="fab fa-twitter"></i></a>
         </section>
     </footer>
-
     <script src="main.js"></script>
 </body>
 </html>
