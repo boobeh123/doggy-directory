@@ -16,7 +16,7 @@ A web application that fetches a list of dog breeds, displays a random picture o
 * Add a "generate random breed" button.
 * Add better legibility to generated Facts & Hobbies
 
-### What did you learn?
+## What did you learn?
 * HTML: Drop down menu with select tag & option tags
 * JavaScript: Fetching from API, createElement method, and Fisher Yates Shuffle 
 * Git: Version control of a project start to finish
