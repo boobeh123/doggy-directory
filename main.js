@@ -105,7 +105,7 @@ const dogInfo = {
             // Generate a random index. The index will access a random name from the array passed in
             this.randomName = array[Math.floor(Math.random() * array.length)]
             // Display random name on #dog-name
-            document.querySelector('#dog-name').innerHTML = `${this.randomName}`;
+            document.querySelector('.dog-name').innerHTML = `${this.randomName}`;
         },
 
         // This method uses Math.random to assign a random age
