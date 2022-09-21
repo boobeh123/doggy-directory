@@ -388,4 +388,15 @@ a {
         margin: 0;
     }
 
+    /* footer */
+    .primary-footer {
+        /* border: 2px solid red; */
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .primary-footer a {
+        margin: .5rem 0 .5rem 0;
+    }
+
   }
