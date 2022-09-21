@@ -1,0 +1,391 @@
+/**************************************************************
+* Clearfix
+***************************************************************/
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    clear: both;
+    *zoom: 1;
+}
+/**************************************************************
+* Base styles
+***************************************************************/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Times New Roman', sans-serif;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0, .5);
+    background: #293f50;
+    height: 100vh;
+    /* border: 2px solid red; */
+} 
+
+/**************************************************************
+* Grid
+***************************************************************/
+
+.container, 
+.grid {
+    margin: 0 auto;
+    /* border: 2px solid red; */
+}
+
+.container {
+    padding: 0 1.9rem;
+    width: 75%;
+    /* border: 2px solid red; */
+}
+
+.grid {
+    width: 75%;
+}
+
+.grid,
+.onethird-column,
+.twothird-column {
+    padding: 0 1rem;
+    /* border: 2px solid red; */
+
+}
+
+.onethird-column, 
+.twothird-column {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.onethird-column {
+    width: 33.3333%;
+}
+
+.twothird-column {
+    width: 66.6666%;
+}   
+
+/**************************************************************
+* Rows
+***************************************************************/
+.row {
+    background-color: #fff;
+    width: 100%;
+    padding: 4.15rem 0 2.5rem 0;
+    /* border: 2px solid red; */
+}
+
+.row-alt {
+    /* border: 2px solid red; */
+    width: 100%;
+    padding: 2.5rem 0 1.25rem 0;
+    background: #cbe2c1;
+    background: -webkit-linear-gradient(to right, #a1d3b0, #f6f1d3);
+    background: -moz-linear-gradient(to right, #a1d3b0, #f6f1d3);
+    background: linear-gradient(to right, #a1d3b0, #f6f1d3);
+}
+
+/**************************************************************
+* Typography
+***************************************************************/
+strong {
+    font-weight: 700;
+}
+cite, em {
+    font-style: italic;
+}
+h1, h3, h4, h5, p {
+    margin-bottom: 1.4rem;
+    /* border: 2px solid red; */
+}
+h1, h2, h3, h4 {
+    color: #648880;
+}
+h1 {
+    font-size: 2.3rem;
+    line-height: 2.75rem;
+    /* border: 2px solid red; */
+}
+h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    /* border: 2px solid red; */
+}
+h3 {
+    font-size: 1.3rem;
+    /* border: 2px solid red; */
+}
+h4 {
+    font-size: 18px;
+    /* border: 2px solid red; */
+}
+h5 {
+    color: #648880;
+    font-size: .8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    /* border: 2px solid red; */
+}
+
+.grid li {
+    border-top: 2px solid #999;
+    padding: .25rem;
+    font-size: 1.25rem;
+}
+.grid p, .grid span {
+    /* border: 2px solid red; */
+    margin: 0 0 .5rem 0;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/**************************************************************
+* Leads
+***************************************************************/
+.lead {
+    text-align: center;
+    /* border: 2px solid red; */
+}
+.lead p {
+    font-size: 1.5rem;
+    line-height: 33px;
+    color: #648880;
+    /* border: 2px solid red; */
+}
+/**************************************************************
+* Links
+***************************************************************/
+a {
+    text-decoration: none;
+    color: #fefefe;
+}
+
+.fa-github {
+    color: #fefefe;
+}
+.fa-github:hover {
+    color: black;
+}
+.fa-twitter:hover {
+    color: dodgerblue;
+}
+
+.fa-github:active, .fa-twitter:active {
+    transform: translateY(-4.5px);
+}
+/**************************************************************
+* Header
+***************************************************************/
+.logo {
+    font-family: 'Lato';
+    float: left;
+    border-top: 4px solid #648880;
+    font-weight: 100;
+    text-transform: uppercase;
+    padding: 2.5rem 0 1.3rem 0;
+    letter-spacing: .5px;
+    color: #a9b2b9;
+    margin-top: 0;
+    /* border: 2px solid red; */
+}
+.logo:hover {
+    color: #648880;
+}
+
+.float-right {
+    margin: 4.15rem 0 1.4rem 0;
+    text-align: right;
+    float: right;
+}
+
+/**************************************************************
+* Footer
+***************************************************************/
+.primary-footer {
+    color: #648880;
+    font-size: 0.9rem;
+    padding: 2.75rem 0;
+    /* border: 2px solid red; */
+}
+
+.primary-footer > p {
+    float: left;
+    font-weight: 400;
+    /* border: 2px solid rebeccapurple; */
+}
+
+.primary-footer a {
+    float: right;
+    margin: 0 1rem 0 0;
+}
+
+/**************************************************************
+* Main / HOME
+***************************************************************/
+
+.hero {
+    line-height: 2.75rem;
+    padding: 1.4rem 5rem 4.15rem 5rem;
+    text-align: center;
+    color: #fff;
+    /* border: 2px solid red; */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 100;
+    /* border: 2px solid red; */
+
+}
+
+
+
+.teaser img {
+    /* border: 2px solid red; */
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1.4rem;
+}
+
+/**************************************************************
+* Media queries
+***************************************************************/
+
+@media screen and (max-device-width: 1440px) {
+          /* header */
+          .container {
+            width: 65%;
+        }
+    
+        /* div/row */
+        .row > .grid {
+            width: 80%;
+        }
+        .onethird-column {
+            width: 33.3333%;
+        }
+        .onethird-column h5 {
+            margin: 0;
+        }
+
+        /* footer */
+        footer p {
+            font-size: 1rem;
+        }
+
+
+  }
+
+@media screen and (max-device-width: 1024px) {
+        /* header */
+        .container {
+            width: 75%;
+        }
+    
+        /* div/row */
+        .row > .grid {
+            width: 80%;
+        }
+        .onethird-column {
+            width: 33.3333%;
+        }
+        .onethird-column h5 {
+            margin: 0;
+        }
+
+        /* footer */
+        footer p {
+            font-size: 1rem;
+        }
+  
+  }
+  
+  @media screen and (max-device-width: 768px) {
+        /* header */
+        .container {
+            width: 85%;
+        }
+    
+        /* div/row */
+        .row > .grid {
+            width: 80%;
+        }
+        .onethird-column, .twothird-column {
+            display: block;
+            width: 100%;
+        }
+        .onethird-column * {
+            text-align: center;
+        }
+        .onethird-column h5 {
+            margin: 0;
+        }
+
+        /* footer */
+        footer p {
+            font-size: 1.25rem;
+
+        }
+
+  }
+  
+  @media screen and (max-device-width: 565px) {
+    /* header */
+    header {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .logo {
+        margin: 0 0 1rem 0;
+        padding: 1rem 0 1rem 0;
+        text-align: center;
+    }
+    .float-right {
+        text-align: center;
+        margin: 1rem 0 1rem 0;
+    }
+
+    /* section */
+    .row-alt {
+        padding: 0;
+        margin: 0;
+    }
+    .hero {
+        padding: 1rem 0 1rem 0;
+    }
+    section h2 {
+        font-size: 1.5rem;   
+    }
+    .hero p {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    /* div/row */
+    .row > .grid {
+        width: 100%;
+    }
+    .onethird-column {
+        display: block;
+        width: 100%;
+    }
+    .onethird-column * {
+        text-align: center;
+    }
+    .onethird-column h5 {
+        margin: 0;
+    }
+
+  }
