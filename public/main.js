@@ -25,10 +25,39 @@ document.querySelector('select').addEventListener('change', event => {
 })
 
 async function getDogImg(url) {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    document.querySelector('.dog-image').src = data.message;
+    const imgElement = document.querySelector('.dog-image');
+    
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Failed to fetch dog image');
+        }
+        const data = await response.json();
+        
+        // Create a new image to preload
+        const newImg = new Image();
+        newImg.src = data.message;
+        
+        // Wait for the image to load
+        await new Promise((resolve, reject) => {
+            newImg.onload = resolve;
+            newImg.onerror = reject;
+        });
+        
+        // Extract breed from URL for alt text
+        const breed = url.split('/breed/')[1].split('/')[0].replace(/-/g, ' ');
+        const formattedBreed = breed.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        
+        // Update image source and alt text
+        imgElement.src = data.message;
+        imgElement.alt = `A ${formattedBreed} dog`;
+    } catch (error) {
+        console.error('Error loading dog image:', error);
+        imgElement.src = 'https://placehold.co/350x350?text=Dog+Not+Found';
+        imgElement.alt = 'Placeholder image for a dog that could not be loaded';
+    } finally {
+        imgElement.classList.remove('loading');
+    }
 }
 
 const dogInfo = {
@@ -97,3 +126,11 @@ const dogInfo = {
             document.querySelector('.dog-funfacts').innerText = `${this.fact[0]}, ${this.fact[1]}`;
         }
 }
+
+// Update copyright year
+document.addEventListener('DOMContentLoaded', function() {
+    const yearSpan = document.querySelector('footer p span');
+    if (yearSpan) {
+        yearSpan.innerHTML = `&copy; ${new Date().getFullYear()} Bobby Asakawa`;
+    }
+});
