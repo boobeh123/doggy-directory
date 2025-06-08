@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An interactive dog generator that creates random dog profiles with images, names, and fun facts. Built with the Dog.CEO API and inspired by Shay Howe's Styles Conference design." />
-    <meta name="keywords" content="Bobby, asakawa, hawaii, HI, oahu, ewa, ewa beach, project, software, engineer, full, stack, web, developer" />
+    <meta name="description" content="Generate random dog profiles with images, names, and fun facts using the Dog.CEO API. A fun interactive tool for dog lovers to discover different breeds and create unique dog personalities." />
+    <meta name="keywords" content="dog generator, random dog, dog breeds, dog profiles, dog facts, dog images, Dog.CEO API, interactive dog tool, dog names, dog personality" />
     <meta name="author" content="Bobby Asakawa" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Dog Fun | Random Dog Profile Generator" />
+    <meta property="og:description" content="Generate random dog profiles with images, names, and fun facts using the Dog.CEO API. A fun interactive tool for dog lovers!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://boobeh123.github.io/doggy-directory/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@boobeh123" />
+    <meta name="twitter:title" content="Dog Fun | Random Dog Profile Generator" />
+    <meta name="twitter:description" content="Generate random dog profiles with images, names, and fun facts using the Dog.CEO API. A fun interactive tool for dog lovers!" />
+    <meta name="twitter:image" content="https://boobeh123.github.io/doggy-directory/public/og-image.jpg" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="canonical" href="https://boobeh123.github.io/doggy-directory/" />
     <title>Dog Fun | Random Dog Profile Generator with Dog.CEO API</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon.ico">
     <!-- Preload critical resources -->
     <link rel="preload" href="./public/style.css" as="style">
+    <link rel="preload" href="./public/main.js" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Roboto:wght@100;400;700&display=swap" as="style">
     <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/9f91d488b5.js" crossorigin="anonymous" async></script>
+    <script src="https://kit.fontawesome.com/9f91d488b5.js" crossorigin="anonymous" defer></script>
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,8 +72,9 @@
     <footer class="container clearfix primary-footer">
         <p><span>&copy;</span> | Design: Shay Howe</p>
         <div class="anchor-container">
-            <a href="https://github.com/boobeh123" aria-label="Visit my GitHub profile"><i class="fa-brands fa-github fa-2xl" aria-hidden="true"></i></a>
-            <a href="https://bobby-asakawa.netlify.app/" target="_blank" aria-label="Visit my portfolio website"><i class="fas fa-globe fa-2xl" aria-hidden="true"></i></a>
+            <a href="https://github.com/boobeh123" aria-label="Visit my GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+            <a href="https://bobby-asakawa.netlify.app/" target="_blank" aria-label="Visit my portfolio website"><i class="fas fa-globe" aria-hidden="true"></i></a>
+            <a href="https://x.com/boobeh123" target="_blank" aria-label="Visit my X profile"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
         </div>
     </footer>
     <script src="./public/main.js"></script>
