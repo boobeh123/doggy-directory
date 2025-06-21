@@ -171,10 +171,19 @@ a {
     color: #fefefe;
 }
 
+.design-footer-anchor { 
+    color: #648880;
+}
+
+a:hover {
+    color: #a1d3b0;
+
+}
+
 .fa-github {
     color: #fefefe;
 }
-.fa-github:hover {
+.fa-github:hover, .fa-x-twitter:hover {
     color: black;
 }
 .fa-globe:hover {
@@ -229,7 +238,9 @@ a {
     float: right;
     margin: 0 1rem 0 0;
 }
-
+.design-footer-anchor {
+    padding-left: .25rem;
+}
 /**************************************************************
 * Main / HOME
 ***************************************************************/
@@ -507,8 +518,8 @@ select option:first-child {
         flex-direction: column;
         text-align: center;
     }
-    .primary-footer a {
-        margin: .5rem .5rem;
+    .primary-footer p {
+        display: flex;
     }
     .anchor-container {
         /* border: 2px solid red; */
